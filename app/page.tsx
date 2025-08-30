@@ -12,7 +12,8 @@ export default function Page(){
     <>
       <Navbar />
       <Hero />
-      <main className="container">
+      <main id="main" className="container">
+
         <AttractionsGrid />
         <AccessSection />
         <PermitSafety />

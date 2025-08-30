@@ -1,0 +1,23 @@
+{
+  // Matikan peringatan unknownAtRules di CSS/SCSS/LESS
+  "css.lint.unknownAtRules": "ignore",
+  "scss.lint.unknownAtRules": "ignore",
+  "less.lint.unknownAtRules": "ignore",
+
+  // (opsional) matikan validasi CSS bawaan agar tidak bentrok
+  "css.validate": false,
+
+  // Bikin pengalaman ngetik Tailwind lebih enak
+  "tailwindCSS.emmetCompletions": true,
+  "editor.quickSuggestions": { "strings": true },
+
+  // Pastikan IntelliSense aktif di berbagai bahasa
+  "tailwindCSS.includeLanguages": {
+    "html": "html",
+    "css": "css",
+    "javascript": "javascript",
+    "javascriptreact": "javascriptreact",
+    "typescript": "typescript",
+    "typescriptreact": "typescriptreact"
+  }
+}

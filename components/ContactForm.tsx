@@ -16,11 +16,19 @@ export default function ContactForm(){
 
     setStatus('Mengirim…')
     try{
-      // TODO: ganti ke Formspree/Apps Script/backend produksi
-      await new Promise(r=>setTimeout(r, 600))
+      // ⬇️ KIRIM KE API ROUTE KAMU
+      const r = await fetch('/api/contact', {
+        method:'POST',
+        headers:{ 'Content-Type':'application/json' },
+        body: JSON.stringify(data)
+      })
+      if(!r.ok) throw new Error('fail')
+
       setStatus('Terima kasih! Pesan kamu sudah kami terima. Kami akan segera menghubungi.')
       form.reset()
-    }catch(err){ setStatus('Maaf, terjadi kesalahan. Coba lagi nanti.') }
+    }catch(err){
+      setStatus('Maaf, terjadi kesalahan. Coba lagi nanti.')
+    }
   }
 
   return (
