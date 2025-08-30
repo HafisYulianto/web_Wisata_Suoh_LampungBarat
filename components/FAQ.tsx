@@ -1,9 +1,12 @@
 export default function FAQ(){
   return (
-    <section id="faq" className="py-14 border-t border-gray-200 dark:border-white/10">
-      <header className="mb-4">
-        <h2 className="text-2xl font-semibold">FAQ</h2>
+    <section id="faq" className="section">
+      <header className="section-head">
+        <h2 className="section-title">FAQ</h2>
+        <p className="section-subtitle">Pertanyaan yang sering ditanyakan pengunjung.</p>
+        <div className="section-accent" />
       </header>
+
       <div className="space-y-3">
         <details className="card">
           <summary className="cursor-pointer font-medium">Apakah perlu pemandu?</summary>

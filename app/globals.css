@@ -58,3 +58,148 @@ html {
   left:12px; top:12px; background:white; color:#0a2240;
   padding:.5rem .75rem; border-radius:.75rem; z-index:50;
 }
+
+@layer components {
+  /* efek hover/ fokus kartu */
+  .card-hover {
+    @apply transition-transform duration-200 hover:-translate-y-0.5 hover:shadow-lg focus-within:ring-2 focus-within:ring-accent/50;
+  }
+  /* zoom lembut saat hover di dalam group */
+  .img-zoom {
+    @apply transition-transform duration-700 ease-out group-hover:scale-[1.03];
+  }
+  /* badge kaca lembut di atas gambar */
+  .badge-glass {
+    @apply inline-flex items-center gap-1 px-2 py-0.5 text-xs font-medium rounded-full
+           bg-white/80 text-navy-900 border border-white/70 shadow-soft backdrop-blur
+           dark:bg-white/10 dark:text-white dark:border-white/20;
+  }
+}
+
+@layer components {
+  /* input dengan style konsisten */
+  .input {
+    @apply h-10 px-10 rounded-xl border border-gray-200 bg-white text-navy-900
+           dark:border-white/10 dark:bg-navy-800/50 dark:text-white
+           placeholder:opacity-60 focus:outline-none focus:ring-2 focus:ring-accent/50;
+  }
+  /* wrapper untuk input berikon */
+  .input-icon {
+    @apply relative;
+  }
+  .input-icon > .icon {
+    @apply absolute left-3 top-1/2 -translate-y-1/2 opacity-70 pointer-events-none;
+  }
+
+  /* segmented control */
+  .segmented {
+    @apply inline-flex items-center gap-1 p-1 rounded-xl border border-gray-200 bg-white
+           dark:bg-navy-800/50 dark:border-white/10;
+  }
+  .seg-item {
+    @apply h-9 px-3 rounded-lg text-sm font-medium transition-colors;
+  }
+  .seg-item[data-active="false"] {
+    @apply text-navy-900/80 hover:bg-gray-50 dark:text-white/80 dark:hover:bg-white/10;
+  }
+  .seg-item[data-active="true"] {
+    @apply bg-navy-900 text-white dark:bg-white dark:text-navy-900;
+  }
+}
+
+@layer components {
+  /* Nav link dengan underline aksen kuning yang halus */
+  .nav-link {
+    position: relative;
+    padding: .25rem .125rem; /* tipis, elegan */
+    font-weight: 500;
+    outline: none;
+  }
+  .nav-link::after {
+    content: "";
+    position: absolute;
+    left: 0; bottom: -2px;
+    height: 2px; width: 100%;
+    background: #f6c90e; /* accent */
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform .2s ease;
+  }
+  .nav-link:hover::after,
+  .nav-link:focus-visible::after {
+    transform: scaleX(1);
+  }
+  .nav-link[data-active="true"]::after {
+    transform: scaleX(1);
+  }
+}
+
+@layer components {
+  /* Eyebrow kecil di atas judul (aksen kuning) */
+  .hero-eyebrow {
+    @apply inline-block px-3 py-1 rounded-full bg-accent text-navy-900 text-sm font-medium shadow-soft;
+  }
+
+  /* Judul hero: responsif & rapih */
+  .hero-title {
+    @apply text-white font-bold tracking-tight text-4xl sm:text-5xl lg:text-6xl;
+  }
+
+  /* Subjudul hero: nyaman dibaca, lebar terkontrol */
+  .hero-subtitle {
+    @apply text-white/90 text-base sm:text-lg max-w-2xl mx-auto;
+  }
+
+  /* Garis aksen tipis di bawah judul */
+  .hero-accent {
+    @apply mt-3 h-1 w-16 mx-auto rounded-full bg-accent;
+  }
+
+  /* Petunjuk scroll halus di bawah hero */
+  .scroll-indicator {
+    @apply absolute bottom-4 left-1/2 -translate-x-1/2 text-white/80 text-sm;
+  }
+  .scroll-indicator::after {
+    content: "↓";
+    @apply ml-2;
+  }
+}
+
+@layer components {
+  /* ===== Section headings (konsisten di seluruh halaman) ===== */
+  .section {
+    @apply py-14 border-t border-gray-200 dark:border-white/10;
+  }
+  .section-head {
+    @apply mb-6 text-center sm:text-left;
+  }
+  .section-title {
+    @apply text-2xl font-semibold tracking-tight text-navy-900 dark:text-white;
+  }
+  .section-subtitle {
+    @apply opacity-70 mt-1;
+  }
+  .section-accent {
+    @apply h-1 w-12 rounded-full bg-accent mx-auto sm:mx-0 mt-3;
+  }
+
+  /* ===== Footer ===== */
+  .footer {
+    @apply border-t border-gray-200 dark:border-white/10 mt-8;
+  }
+  .footer-inner {
+    @apply container py-8 grid gap-6 sm:grid-cols-[1fr_auto] items-center;
+  }
+  .footer-brand {
+    @apply flex items-center gap-2 font-bold;
+  }
+  .footer-meta {
+    @apply text-sm opacity-80 mt-2;
+  }
+  .footer-nav {
+    @apply flex flex-wrap gap-4 text-sm opacity-80 justify-start sm:justify-end;
+  }
+  .backtop {
+    @apply btn btn-ghost h-9;
+  }
+}

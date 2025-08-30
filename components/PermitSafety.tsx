@@ -1,9 +1,12 @@
 export default function PermitSafety(){
   return (
-    <section id="izin" className="py-14 border-t border-gray-200 dark:border-white/10">
-      <header className="mb-4">
-        <h2 className="text-2xl font-semibold">Izin & Keselamatan</h2>
+    <section id="izin" className="section">
+      <header className="section-head">
+        <h2 className="section-title">Izin & Keselamatan</h2>
+        <p className="section-subtitle">Ketentuan kunjungan dan panduan keselamatan di area geotermal & savana.</p>
+        <div className="section-accent" />
       </header>
+
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
         <article className="card">
           <h3 className="text-lg font-semibold">Izin Kunjungan</h3>
@@ -15,6 +18,7 @@ export default function PermitSafety(){
             <li>Komitmen konservasi (tanpa sampah, tanpa api)</li>
           </ul>
         </article>
+
         <article className="card">
           <h3 className="text-lg font-semibold">Keselamatan</h3>
           <ul className="list-disc ml-5 mt-2 space-y-1">

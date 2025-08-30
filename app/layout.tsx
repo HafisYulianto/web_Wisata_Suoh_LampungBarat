@@ -12,7 +12,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="id" suppressHydrationWarning>
       <body>
         <a href="#main" className="skip-link">Lewati ke konten</a>
-        {children}
+        {/* ⬇️ padding-top agar konten tidak ketutup header fixed */}
+        <div className="pt-16 sm:pt-[70px]">
+          {children}
+        </div>
       </body>
     </html>
   )

@@ -17,7 +17,7 @@ export default function MobileNav(){
       >☰</button>
 
       {open && (
-        <div id="mnav" className="fixed inset-0 z-50" aria-modal="true" role="dialog">
+        <div id="mnav" className="fixed inset-0 z-60" aria-modal="true" role="dialog">
           <div className="absolute inset-0 bg-black/30" onClick={()=>setOpen(false)} />
           <nav className="absolute right-0 top-0 h-full w-64 bg-white dark:bg-navy-900 p-5 flex flex-col gap-4">
             <Link href="#jelajah" onClick={()=>setOpen(false)}>Jelajah</Link>

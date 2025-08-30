@@ -1,6 +1,6 @@
 'use client'
 import { useMemo, useState } from 'react'
-import AttractionCard, { type Attraction } from './AttractionCard'
+import AttractionCard from './AttractionCard'
 import FiltersBar from './FiltersBar'
 import data from '@/lib/data/attractions'
 
@@ -24,17 +24,21 @@ export default function AttractionsGrid(){
   }, [q, category, sort])
 
   return (
-    <section id="jelajah" className="py-14 border-t border-gray-200 dark:border-white/10">
-      <header className="mb-4">
-        <h2 className="text-2xl font-semibold">Jelajah Destinasi</h2>
-        <p className="opacity-80">Telusuri danau, geotermal, dan padang savana. Gunakan pencarian atau filter kategori.</p>
+    <section id="jelajah" className="section">
+      <header className="section-head">
+        <h2 className="section-title">Jelajah Destinasi</h2>
+        <p className="section-subtitle">Telusuri danau, geotermal, dan padang savana. Gunakan pencarian atau filter kategori.</p>
+        <div className="section-accent" />
       </header>
 
-      <FiltersBar q={q} category={category} sort={sort} onChange={(v)=>{
-        if('q' in v) setQ(v.q||'')
-        if('category' in v) setCategory(v.category as any)
-        if('sort' in v) setSort(v.sort as any)
-      }}/>
+      <FiltersBar
+        q={q} category={category} sort={sort}
+        onChange={(v)=>{
+          if('q' in v) setQ(v.q||'')
+          if('category' in v) setCategory(v.category as any)
+          if('sort' in v) setSort(v.sort as any)
+        }}
+      />
 
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
         {list.length ? list.map(a => <AttractionCard key={a.id} a={a} />) : (
