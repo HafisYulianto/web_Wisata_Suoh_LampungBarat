@@ -15,7 +15,7 @@ export default function AccessSection(){
             <li>Alternatif via Liwa / Sekincau (arah Lampung Barat).</li>
             <li>Beberapa segmen jalan berbatu—disarankan kendaraan ground-clearance tinggi.</li>
           </ol>
-          <a className="btn btn-ghost h-9 mt-3" href="https://www.google.com/maps/dir/?api=1&destination=Suoh%2C+Lampung+Barat" target="_blank" rel="noopener">
+          <a className="btn btn-ghost h-9 mt-3" href="https://maps.app.goo.gl/bQPT6nwCjGyW1tRM7" target="_blank" rel="noopener">
             Buka Google Maps
           </a>
         </article>

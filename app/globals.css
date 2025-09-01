@@ -203,3 +203,15 @@ html {
     @apply btn btn-ghost h-9;
   }
 }
+
+@layer components {
+  /* Floating CTA bar (mobile only) */
+  .cta-bar { @apply fixed inset-x-0 bottom-0 z-[70] sm:hidden; }
+  .cta-inner { @apply mx-auto max-w-6xl px-4 pb-[env(safe-area-inset-bottom)]; }
+  .cta-card { @apply m-3 rounded-2xl border border-gray-200 bg-white/95 dark:bg-navy-900/90 backdrop-blur shadow-lg dark:border-white/10; }
+  .cta-grid { @apply grid grid-cols-3 divide-x divide-gray-200 dark:divide-white/10; }
+  .cta-btn { @apply h-12 flex items-center justify-center gap-2 text-sm font-medium text-navy-900 dark:text-white; }
+
+  /* kecilkan sedikit saat tap */
+  .cta-btn:active { transform: translateY(1px); }
+}
