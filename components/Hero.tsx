@@ -37,7 +37,7 @@ export default function Hero(){
 
           <div className="mt-5 flex justify-center gap-3">
             <a className="btn btn-primary" href="#jelajah" aria-label="Jelajah Destinasi">Jelajah Destinasi</a>
-            <a className="btn btn-ghost" href="#izin" aria-label="Cek Izin">Cek Izin</a>
+            <a className="btn bg-white" href="#izin" aria-label="Cek Izin">Cek Izin</a>
             <a className="btn btn-accent" href="#kontak" aria-label="Hubungi Kami">Hubungi Kami</a>
           </div>
         </div>
